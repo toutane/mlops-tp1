@@ -35,3 +35,8 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+      
+      - name: Run image on VM
+        with:
+          run: |
+            ssh -p ${{ secrets.VM_SSH_PASSPHRASE }} ssh ubuntu@20.229.168.115 'docker pull toutane/mlops-mini-projet1:main && docker run -p 5042:5042 toutane/mlops-mini-projet1'
