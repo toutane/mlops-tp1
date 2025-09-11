@@ -40,4 +40,4 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y sshpass
 
       - name: Pull and run image
-        run: sshpass -p ${{ secrets.VM_SSH_PASSPHRASE }} ssh -o StrictHostKeyChecking=no ubuntu@20.229.168.115 'docker pull toutane/mlops-mini-projet1:main && docker run -d -p 5042:5042 toutane/mlops-mini-projet1:main'
+        run: sshpass -p ${{ secrets.VM_SSH_PASSPHRASE }} ssh -o StrictHostKeyChecking=no ubuntu@20.229.168.115 'docker pull toutane/mlops-mini-projet1:main; docker rm -f already_running || true; docker run -d --name already_running -p 5043:5043 toutane/mlops-mini-projet1:main'
