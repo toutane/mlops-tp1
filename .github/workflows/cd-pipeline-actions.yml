@@ -1,8 +1,8 @@
-name: Mini projet 1 - level 4
+name: Continuous Development
 
 on:
   release:
-    types: [published]
+    types: [push]
 
 jobs:
   push_to_registries:
