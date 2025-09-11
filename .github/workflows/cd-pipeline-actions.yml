@@ -36,7 +36,8 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
       
-      - name: Run image on VM
-        with:
-          run: |
-            ssh -p ${{ secrets.VM_SSH_PASSPHRASE }} ssh ubuntu@20.229.168.115 'docker pull toutane/mlops-mini-projet1:main && docker run -p 5042:5042 toutane/mlops-mini-projet1'
+      - name: Install ssh-pass
+        run: sudo apt-get update && sudo apt-get install -y sshpass
+
+      - name: Pull and run image
+        run: sshpass -p ${{ secrets.VM_SSH_PASSPHRASE }} ssh ubuntu@20.229.168.115 'docker pull toutane/mlops-mini-projet1:main && docker run -p 5042:5042 toutane/mlops-mini-projet1'
