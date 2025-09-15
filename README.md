@@ -1,12 +1,6 @@
 ## MLOps - TP 1
 
-### Exercice 3
-
-Can be found in the `exercice-3` folder.
-
-### Exercice 4
-
-#### Level 4 (Bonus)
+### Exercice 4 - Level 4 (Bonus)
 
 Level 4 builds upon previous work from [this Kaggle project](https://www.kaggle.com/code/toutane/gh-navires-2025). The goal is to deploy a **Keras image classifier** for boat types using **FastAPI**, enabling inference through an HTTP API.
 

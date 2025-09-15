@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Run job.py
-        run: python3 job.py
+        run: python3 exercice-4/level-3/job.py
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
